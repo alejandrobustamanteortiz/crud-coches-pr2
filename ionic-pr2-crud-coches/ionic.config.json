@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "ionic-pr2-crud-coches",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
