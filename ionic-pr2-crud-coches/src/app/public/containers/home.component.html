@@ -1,7 +1,20 @@
 <ion-content>
-
-  <ion-title class="ion-margin">Listado de coches</ion-title>
-
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline" routerLink="/nuevo-coche">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Añadir coche
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button fill="outline">
+        Actualizar
+        <ion-icon slot="end" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Listado de coches</ion-title>
+  </ion-toolbar>
+  
   <table class="table">
     <thead>
       <tr>
@@ -22,21 +35,21 @@
         <td>{{car.matricula}}</td>
         <td>{{car.year}}</td>
         <td>{{car.kilometros}}</td>
+
         <div class="acciones">
 
           <td><button type="button" class="btn btn-primary">Ver</button>
-            <button type="button" class="btn btn-warning">Editar</button>
-            <button type="button" class="btn btn-danger">Borrar</button>
-  
+            <button type="button" class="btn btn-warning" routerLink="/nuevo-coche">Editar</button>
+            <button (click)="onDeleteCarById(car.id)" type="button" class="btn btn-danger">Borrar</button>
           </td>
 
         </div>
         
       </tr>
-   
-    
+
     </tbody>
   </table>
+
 
 
 </ion-content>

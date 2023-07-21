@@ -1,0 +1,55 @@
+<ion-content>
+
+  <ion-toolbar class="ion-align-items-center ion-justify-content-center">
+    <ion-title class="ion-text-center">Añadir nuevo coche</ion-title>
+  </ion-toolbar>
+
+  <div class="contenido">
+
+    <div class="form">
+
+      <form #dataForm="ngForm">
+        <input type="hidden" name="id" [(ngModel)]="nuevoCar.id">
+        <div>
+          <label for="marca">Marca:</label>
+          <input type="text" id="marca" name="marca" [(ngModel)]="nuevoCar.marca" required="true">
+        </div>
+      
+        <div>
+          <label for="modelo">Modelo:</label>
+          <input type="text" id="modelo" name="modelo" [(ngModel)]="nuevoCar.modelo" required>
+        </div>
+      
+        <div>
+          <label for="year">Año:</label>
+          <input type="number" id="year" name="year" [(ngModel)]="nuevoCar.year" required min="0">
+          
+        </div>
+      
+        <div>
+          <label for="matricula">Matrícula:</label>
+          <input type="text" id="matricula" name="matricula" [(ngModel)]="nuevoCar.matricula" required>
+        </div>
+      
+        <div>
+          <label for="kilometros">Kilómetros:</label>
+          <input type="number" id="kilometros" name="kilometros" [(ngModel)]="nuevoCar.kilometros" required min="0">
+        </div>
+      
+        <button type="submit" class="btn btn-success" (click)="addAndEdit(dataForm)">Añadir Coche</button>
+
+        <button routerLink="/home" type="button" class="btn btn-secondary">Volver</button>
+        
+      </form>
+      
+    
+     </div>
+
+  </div>
+ 
+
+
+</ion-content>
+
+
+

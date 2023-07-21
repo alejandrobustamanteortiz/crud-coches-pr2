@@ -21,10 +21,14 @@ export class HomeComponent implements OnInit {
   }
 
   getAllCars() {
-    this.cars = this.carService.getAllCars();
+    this.cars = this.carService.getCars();
   }
 
+  onDeleteCarById(id: number): void {
+    this.carService.eliminarCar(id);
+    this.cars = this.carService.getCars();
+  }
 
   
-
-}
+  
+  }
